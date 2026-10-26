@@ -2,21 +2,21 @@
 
 :root {
   /* Paleta */
-  --porcelana: #faf9fd;
-  --noite: #15042a;
-  --violeta: #320a59;
-  --ameixa: #7b5da6;
-  --nevoa: #bebad9;
+  --porcelana: #f7fcfb;
+  --abismo: #042523;
+  --petroleo: #0b4743;
+  --musgo: #3a7d77;
+  --nevoa: #b3d8d3;
   --agua: #88bfbf;
   --mare: #118c80;
 
   /* Tom claro (padrão) */
   --bg: var(--porcelana);
-  --fg: var(--violeta);
-  --fg-soft: var(--ameixa);
+  --fg: var(--petroleo);
+  --fg-soft: var(--musgo);
   --line: color-mix(in srgb, var(--nevoa) 70%, transparent);
   --accent: var(--mare);
-  --btn-bg: var(--violeta);
+  --btn-bg: var(--petroleo);
   --btn-fg: var(--porcelana);
   --focus: var(--mare);
 
@@ -42,26 +42,26 @@
 /* Permite um bloco claro dentro de uma seção escura (ex.: cards do portfólio). */
 [data-tone='light'] {
   --bg: var(--porcelana);
-  --fg: var(--violeta);
-  --fg-soft: var(--ameixa);
+  --fg: var(--petroleo);
+  --fg-soft: var(--musgo);
   --line: color-mix(in srgb, var(--nevoa) 70%, transparent);
   --accent: var(--mare);
-  --btn-bg: var(--violeta);
+  --btn-bg: var(--petroleo);
   --btn-fg: var(--porcelana);
   --focus: var(--mare);
   color-scheme: light;
 }
 
 [data-tone='dark'] {
-  --bg: var(--noite);
-  --fg: #f3f0fa;
+  --bg: var(--abismo);
+  --fg: #eef8f6;
   --fg-soft: var(--nevoa);
   --line: color-mix(in srgb, var(--nevoa) 22%, transparent);
   --accent: var(--agua);
   --btn-bg: var(--agua);
-  --btn-fg: var(--noite);
+  --btn-fg: var(--abismo);
   --focus: var(--agua);
-  --ameixa-claro: #a58fd0;
+  --agua-clara: #7cc6bd;
   color-scheme: dark;
 }
 
@@ -136,7 +136,7 @@ textarea {
 
 ::selection {
   background: var(--agua);
-  color: var(--noite);
+  color: var(--abismo);
 }
 
 :focus-visible {
@@ -164,7 +164,7 @@ textarea {
   z-index: 100;
   padding: 10px 18px;
   border-radius: 999px;
-  background: var(--violeta);
+  background: var(--petroleo);
   color: var(--porcelana);
   text-decoration: none;
   transform: translateY(-160%);

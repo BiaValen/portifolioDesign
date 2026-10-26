@@ -22,11 +22,11 @@ const bars = Array.from({ length: 9 }, (_, i) => 60 + ((i * 53 + seed * 31) % 20
     category === 'identidade' && (
       <g>
         <rect width={W} height={H} fill="#88bfbf" />
-        <circle cx={cx - 38 + v * 4} cy={cy} r={Math.min(W, H) * 0.24} fill="none" stroke="#320a59" stroke-width="1.5" />
-        <circle cx={cx + 38 - v * 4} cy={cy} r={Math.min(W, H) * 0.24} fill="#320a59" fill-opacity="0.9" />
+        <circle cx={cx - 38 + v * 4} cy={cy} r={Math.min(W, H) * 0.24} fill="none" stroke="#0b4743" stroke-width="1.5" />
+        <circle cx={cx + 38 - v * 4} cy={cy} r={Math.min(W, H) * 0.24} fill="#0b4743" fill-opacity="0.9" />
         <path
           d={`M${cx - 120} ${cy + Math.min(W, H) * 0.34}H${cx + 120}`}
-          stroke="#320a59"
+          stroke="#0b4743"
           stroke-width="1.5"
         />
       </g>
@@ -35,14 +35,14 @@ const bars = Array.from({ length: 9 }, (_, i) => 60 + ((i * 53 + seed * 31) % 20
   {
     category === 'interfaces' && (
       <g>
-        <rect width={W} height={H} fill="#bebad9" />
+        <rect width={W} height={H} fill="#b3d8d3" />
         <g transform={`translate(${W * 0.12} ${H * 0.16})`}>
-          <rect width={W * 0.76} height={H * 0.84} rx="10" fill="#faf9fd" />
-          <circle cx="16" cy="14" r="3.5" fill="#bebad9" />
-          <circle cx="28" cy="14" r="3.5" fill="#bebad9" />
-          <circle cx="40" cy="14" r="3.5" fill="#bebad9" />
-          <rect x="16" y="40" width={W * 0.3} height="12" rx="6" fill="#320a59" />
-          <rect x="16" y="62" width={W * 0.22} height="8" rx="4" fill="#7b5da6" opacity="0.5" />
+          <rect width={W * 0.76} height={H * 0.84} rx="10" fill="#f7fcfb" />
+          <circle cx="16" cy="14" r="3.5" fill="#b3d8d3" />
+          <circle cx="28" cy="14" r="3.5" fill="#b3d8d3" />
+          <circle cx="40" cy="14" r="3.5" fill="#b3d8d3" />
+          <rect x="16" y="40" width={W * 0.3} height="12" rx="6" fill="#0b4743" />
+          <rect x="16" y="62" width={W * 0.22} height="8" rx="4" fill="#3a7d77" opacity="0.5" />
           <rect x="16" y="84" width="72" height="22" rx="11" fill="#118c80" />
           <rect x={W * 0.42} y="40" width={W * 0.28} height={H * 0.84 - 64} rx="8" fill="#88bfbf" />
         </g>
@@ -52,16 +52,16 @@ const bars = Array.from({ length: 9 }, (_, i) => 60 + ((i * 53 + seed * 31) % 20
   {
     category === 'social' && (
       <g>
-        <rect width={W} height={H} fill="#7b5da6" />
+        <rect width={W} height={H} fill="#3a7d77" />
         <g transform={`translate(${cx - H * 0.2} ${H * 0.1})`}>
-          <rect width={H * 0.4} height={H * 0.8} rx="16" fill="#320a59" />
+          <rect width={H * 0.4} height={H * 0.8} rx="16" fill="#0b4743" />
           <rect x="10" y="10" width={H * 0.4 - 20} height={H * 0.8 - 20} rx="9" fill="#88bfbf" opacity="0.9" />
           <path
             d={`M${H * 0.2 - 10} ${H * 0.4 - 14}l26 14-26 14Z`}
-            fill="#faf9fd"
+            fill="#f7fcfb"
           />
-          <rect x="22" y={H * 0.8 - 48} width={H * 0.2} height="6" rx="3" fill="#faf9fd" />
-          <rect x="22" y={H * 0.8 - 36} width={H * 0.12} height="6" rx="3" fill="#faf9fd" opacity="0.6" />
+          <rect x="22" y={H * 0.8 - 48} width={H * 0.2} height="6" rx="3" fill="#f7fcfb" />
+          <rect x="22" y={H * 0.8 - 36} width={H * 0.12} height="6" rx="3" fill="#f7fcfb" opacity="0.6" />
         </g>
       </g>
     )
@@ -69,7 +69,7 @@ const bars = Array.from({ length: 9 }, (_, i) => 60 + ((i * 53 + seed * 31) % 20
   {
     category === 'dev' && (
       <g>
-        <rect width={W} height={H} fill="#2a0c4a" />
+        <rect width={W} height={H} fill="#08403c" />
         {bars.map((b, i) => (
           <rect
             x={40 + (i % 3 === 0 ? 0 : 24 * ((i % 3) + 0))}
@@ -77,7 +77,7 @@ const bars = Array.from({ length: 9 }, (_, i) => 60 + ((i * 53 + seed * 31) % 20
             width={b * (W / 400) * 0.9}
             height="8"
             rx="4"
-            fill={i % 4 === 1 ? '#118c80' : i % 4 === 3 ? '#7b5da6' : '#88bfbf'}
+            fill={i % 4 === 1 ? '#118c80' : i % 4 === 3 ? '#3a7d77' : '#88bfbf'}
             opacity={i % 4 === 0 ? 1 : 0.75}
           />
         ))}
