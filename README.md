@@ -36,6 +36,7 @@ Cada projeto é um item em `src/data/projects.ts`. Um projeto pode ter:
 - **Site ou app** (`site`): vídeo de navegação e páginas que dá para rolar no case.
   Use `device: 'mobile'` para mostrar numa moldura de celular.
 - **Identidade visual** (`identity`): imagens soltas em `public/portfolio/`.
+- **Jogo** (`game`): trailer, link para jogar, prêmio, texto sobre o jogo, equipe e imagens de divulgação.
 - **Projeto pessoal** (`own: true`): mostra a etiqueta "Projeto pessoal" no lugar de cliente.
 
 ## Publicar no GitHub Pages

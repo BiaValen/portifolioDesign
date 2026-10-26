@@ -83,7 +83,9 @@ const count = (c: (typeof categories)[number]) => projects.filter((p) => p.servi
 
                 <div class="w-meta">
                   <ul class="tags">
+                    {p.game?.award && <li class="tag-award">{p.game.award[lang]}</li>}
                     {p.own && <li>{s.own}</li>}
+                    {p.game && <li>{s.game}</li>}
                     {p.site && <li>{s.site}</li>}
                     {p.identity && <li>{s.identity}</li>}
                     {nCarousels > 0 && <li>{s.carousels(nCarousels)}</li>}
@@ -360,6 +362,12 @@ const count = (c: (typeof categories)[number]) => projects.filter((p) => p.servi
     border: 1px solid var(--line);
     border-radius: 999px;
     font-size: 0.82rem;
+  }
+
+  .tags .tag-award {
+    border-color: #f2c14e;
+    background: #f2c14e;
+    color: var(--noite);
   }
 
   @media (max-width: 1024px) {

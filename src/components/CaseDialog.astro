@@ -1,5 +1,5 @@
 ---
-// Case de um cliente em tela cheia: site, identidade visual e carrosséis.
+// Case de um cliente em tela cheia: jogo, site, identidade visual e carrosséis.
 // As imagens só carregam quando o case é aberto (e cada carrossel, quando é escolhido).
 import { t, type Lang } from '../i18n/strings';
 import type { Project } from '../data/projects';
@@ -20,6 +20,7 @@ const identity = (p.identity ?? []).flatMap((item) =>
 const carousels = (p.carousels ?? []).map((c) => getSet(c)).filter((c) => c !== undefined);
 const pages = p.site?.pages ?? [];
 const mobile = p.site?.device === 'mobile';
+const game = p.game;
 ---
 
 <dialog class="case" id={id} data-tone="dark" aria-labelledby={`${id}-title`}>
@@ -33,6 +34,7 @@ const mobile = p.site?.device === 'mobile';
           {p.own && <span>{s.own}</span>}
           <span>{p.year}</span>
         </p>
+        {game?.award && <p class="award">{game.award[lang]}</p>}
       </div>
       <button type="button" class="case-close" data-close aria-label={s.close}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
@@ -40,6 +42,72 @@ const mobile = p.site?.device === 'mobile';
         </svg>
       </button>
     </header>
+
+    {
+      game && (
+        <section class="block" aria-label={s.game}>
+          <h3 class="block-title">{s.game}</h3>
+          {game.video && (
+            <div class="browser game-frame">
+              <video
+                class="site-video game-video"
+                data-src={image(game.video)}
+                poster={game.poster ? image(game.poster) : undefined}
+                muted
+                loop
+                playsinline
+                controls
+                preload="none"
+                aria-label={s.trailer}
+              />
+            </div>
+          )}
+
+          <div class="game-info">
+            {game.about && (
+              <div class="game-about">
+                {game.about.map((par) => (
+                  <p>{par[lang]}</p>
+                ))}
+                {game.facts && <p class="game-facts">{game.facts[lang]}</p>}
+              </div>
+            )}
+            {game.credits && (
+              <div class="credits">
+                <h4 class="credits-title">{s.credits}</h4>
+                <dl>
+                  {game.credits.map((c) => (
+                    <div>
+                      <dt>{c.name}</dt>
+                      {c.role && <dd>{c.role[lang]}</dd>}
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
+          </div>
+
+          {game.url && (
+            <a class="btn" href={game.url} target="_blank" rel="noopener">
+              {s.play}
+            </a>
+          )}
+        </section>
+      )
+    }
+
+    {
+      game?.images && game.images.length > 0 && (
+        <section class="block" aria-label={s.promo}>
+          <h3 class="block-title">{s.promo}</h3>
+          <div class="promo">
+            {game.images.map((src) => (
+              <img src={image(src)} alt="" loading="lazy" decoding="async" />
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     {
       carousels.length > 0 && (
@@ -240,6 +308,17 @@ const mobile = p.site?.device === 'mobile';
     flex-wrap: wrap;
     gap: 8px 24px;
     color: var(--accent);
+  }
+
+  /* Prêmio em destaque, como uma etiqueta. */
+  .award {
+    justify-self: start;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #f2c14e;
+    color: var(--noite);
+    font-weight: 500;
+    font-size: 0.95rem;
   }
 
   .case-close {
@@ -537,6 +616,70 @@ const mobile = p.site?.device === 'mobile';
     border-color: var(--agua);
   }
 
+  /* Jogo: trailer em 16:9, texto e equipe lado a lado. */
+  .game-frame {
+    background: #000;
+  }
+
+  .game-video {
+    aspect-ratio: 16 / 9;
+    background: #000;
+  }
+
+  .game-info {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 64px);
+    width: 100%;
+  }
+
+  .game-about {
+    display: grid;
+    gap: 16px;
+    max-width: 44rem;
+    color: var(--fg-soft);
+    line-height: 1.6;
+  }
+
+  .game-facts {
+    color: var(--accent);
+  }
+
+  .credits {
+    display: grid;
+    gap: 16px;
+    align-content: start;
+  }
+
+  .credits-title {
+    font-size: var(--step-0);
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .credits dl {
+    display: grid;
+    gap: 14px;
+  }
+
+  .credits dd {
+    color: var(--fg-soft);
+    font-size: 0.92rem;
+  }
+
+  .promo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .promo img {
+    width: 100%;
+    border-radius: 14px;
+  }
+
   .site-shot {
     display: block;
     width: 100%;
@@ -561,6 +704,13 @@ const mobile = p.site?.device === 'mobile';
   .id-grid img {
     width: 100%;
     border-radius: 14px;
+  }
+
+  @media (max-width: 760px) {
+    .game-info,
+    .promo {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 
   @media (max-width: 640px) {

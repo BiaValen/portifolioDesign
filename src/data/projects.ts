@@ -12,7 +12,7 @@
 // size: tamanho do card na grade. 'wide' (largo), 'tall' (alto) ou 'normal'.
 // cover: imagem do card. Para usar um slide convertido: '/portfolio/sets/<id>/<n>.webp'.
 
-export type Category = 'identidade' | 'interfaces' | 'social' | 'dev';
+export type Category = 'identidade' | 'interfaces' | 'social' | 'dev' | 'jogos';
 
 export type SourceRef = { src: string; drop?: number[]; order?: number[] };
 
@@ -43,11 +43,91 @@ export type Project = {
   // Imagens soltas (caminho em public/) ou galerias convertidas do Canva.
   identity?: (string | SourceRef)[];
   carousels?: SourceRef[];
+  // Jogo: link para jogar, trailer, prêmio, ficha técnica, equipe e imagens de divulgação.
+  game?: {
+    url?: string;
+    video?: string;
+    poster?: string;
+    award?: { pt: string; en: string };
+    // Ex.: 'Feito em 48 horas, em Godot 4'.
+    facts?: { pt: string; en: string };
+    // Parágrafos sobre o jogo, mostrados no case.
+    about?: { pt: string; en: string }[];
+    credits?: { name: string; role?: { pt: string; en: string } }[];
+    images?: string[];
+  };
 };
 
-export const categories: Category[] = ['identidade', 'interfaces', 'social', 'dev'];
+export const categories: Category[] = ['identidade', 'interfaces', 'social', 'dev', 'jogos'];
 
 export const projects: Project[] = [
+  {
+    id: 'quito',
+    client: 'Quito',
+    own: true,
+    summary: {
+      pt: 'Jogo de plataforma num desktop falso: estique, corte e arraste janelas e ícones para ajudar um passarinho em risco de extinção a montar seu ninho.',
+      en: 'A platformer set on a fake desktop: stretch, cut and drag windows and icons to help an endangered little bird build its nest.',
+    },
+    services: ['jogos', 'dev'],
+    year: '2026',
+    size: 'wide',
+    cover: '/portfolio/quito/poster.webp',
+    game: {
+      url: 'https://calderaro.itch.io/quito',
+      video: '/portfolio/quito/trailer.mp4',
+      poster: '/portfolio/quito/poster.webp',
+      award: { pt: '1º lugar na Gamerex 2026', en: '1st place at Gamerex 2026' },
+      facts: { pt: 'Feito em 48 horas, em Godot 4', en: 'Made in 48 hours, in Godot 4' },
+      about: [
+        {
+          pt: 'Quito é um bicudinho-do-brejo-paulista, um passarinho pequeno que está em risco de desaparecer. Ele vive dentro de um computador e precisa juntar gravetos para montar um ninho para a bicudinha.',
+          en: 'Quito is a São Paulo marsh antwren, a tiny bird at risk of disappearing. He lives inside a computer and has to gather twigs to build a nest for his mate.',
+        },
+        {
+          pt: 'O jogo se passa num desktop falso. Estique, encolha e corte a janela com o mouse para abrir caminho, e arraste os ícones do desktop para usá-los como plataformas e paredes. Cuidado com as bordas de vidro: bater nelas na disparada custa uma pena.',
+          en: 'The game takes place on a fake desktop. Stretch, shrink and cut the window with the mouse to clear a path, and drag desktop icons to use them as platforms and walls. Watch out for the glass edges: hitting them at full speed costs a feather.',
+        },
+      ],
+      credits: [
+        { name: 'Letícia Akemi Ikemoto', role: { pt: 'Arte e game design', en: 'Art and game design' } },
+        { name: 'Felipe Calderaro', role: { pt: 'Programação e game design', en: 'Programming and game design' } },
+        { name: 'Bianca Valenciani', role: { pt: 'Efeitos sonoros e game design', en: 'Sound effects and game design' } },
+      ],
+      images: ['/portfolio/quito/divulgacao.webp', '/portfolio/quito/creditos.webp'],
+    },
+  },
+  {
+    id: 'fragments-of-eter',
+    client: 'Fragments of Eter',
+    summary: {
+      pt: 'Jogo de ação em pixel art: Bai Hua, a Guardadora do Éter, atravessa os reinos de cinco elementos ao lado do seu gato para enfrentar a força do vácuo.',
+      en: 'A pixel art action game: Bai Hua, Keeper of the Ether, crosses the realms of five elements with her cat to face the force of the void.',
+    },
+    services: ['jogos', 'dev'],
+    year: '2026',
+    size: 'wide',
+    cover: '/portfolio/fragments-of-eter/poster.webp',
+    game: {
+      url: 'https://calderaro.itch.io/fragments-of-eter',
+      video: '/portfolio/fragments-of-eter/trailer.mp4',
+      poster: '/portfolio/fragments-of-eter/poster.webp',
+      award: { pt: 'Vencedor da Mostra Cultural de Jogos da Unifesp', en: 'Winner of the Unifesp Cultural Game Showcase' },
+      facts: { pt: 'Desenvolvimento de Games, Unifesp', en: 'Game Development, Unifesp (Federal University of São Paulo)' },
+      about: [
+        {
+          pt: 'Há mil anos, uma força nasceu do desequilíbrio. Bai Hua, a escolhida como Guardadora do Éter, é a última esperança, e não está sozinha: Hei Mao, seu gato, é na verdade um guia entre dimensões.',
+          en: 'A thousand years ago, a force was born from imbalance. Bai Hua, chosen as Keeper of the Ether, is the last hope, and she is not alone: Hei Mao, her cat, is actually a guide between dimensions.',
+        },
+        {
+          pt: 'Cada fase é o reino de um Éter: madeira, fogo, terra, metal e água. Sobreviva às hordas que fecham o cerco, fique mais forte a cada elemento e enfrente Xuan Zhi no vácuo.',
+          en: 'Each stage is the realm of one Ether: wood, fire, earth, metal and water. Survive the hordes closing in, grow stronger with each element and face Xuan Zhi in the void.',
+        },
+      ],
+      credits: [{ name: 'Bianca Valenciani' }, { name: 'Felipe Calderaro' }],
+      images: ['/portfolio/fragments-of-eter/divulgacao.webp', '/portfolio/fragments-of-eter/creditos.webp'],
+    },
+  },
   {
     id: 'paes-de-sal',
     client: 'Pães de Sal',
@@ -153,7 +233,7 @@ export const projects: Project[] = [
     },
     services: ['interfaces', 'dev'],
     year: '2026',
-    size: 'wide',
+    size: 'normal',
     cover: '/portfolio/gastos/telas/01-dashboard.webp',
     site: {
       video: '/portfolio/gastos/navegacao.mp4',

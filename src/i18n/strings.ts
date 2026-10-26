@@ -25,13 +25,13 @@ const pt = {
     otherLangShort: 'EN',
   },
   hero: {
-    lead: 'Projetos de identidade visual, interfaces, sites, aplicativos e conteúdo para redes sociais.',
+    lead: 'Projetos de identidade visual, interfaces, sites, aplicativos, jogos e conteúdo para redes sociais.',
     primary: 'Ver portfólio',
     secondary: 'Entrar em contato',
   },
   work: {
     title: 'Portfólio',
-    intro: 'Uma seleção de projetos de identidade visual, interfaces, conteúdo e desenvolvimento.',
+    intro: 'Uma seleção de projetos de identidade visual, interfaces, conteúdo, desenvolvimento e jogos.',
     filterLabel: 'Filtrar projetos por tipo',
     all: 'Todos',
     categories: {
@@ -39,6 +39,7 @@ const pt = {
       interfaces: 'UI/UX e sites',
       social: 'Redes sociais',
       dev: 'Desenvolvimento',
+      jogos: 'Jogos',
     },
     empty: 'Ainda não há projetos nesta categoria. Veja os outros tipos acima.',
     open: 'Abrir projeto',
@@ -56,6 +57,11 @@ const pt = {
     prev: 'Slide anterior',
     next: 'Próximo slide',
     slideOf: (i: number, n: number) => `${i} de ${n}`,
+    game: 'Jogo',
+    play: 'Jogar grátis no itch.io',
+    trailer: 'Trailer do jogo',
+    credits: 'Equipe',
+    promo: 'Divulgação',
   },
   contact: {
     title: 'Vamos conversar',
@@ -89,13 +95,13 @@ const en: typeof pt = {
     otherLangShort: 'PT',
   },
   hero: {
-    lead: 'Brand identity, interfaces, websites, apps and social media content.',
+    lead: 'Brand identity, interfaces, websites, apps, games and social media content.',
     primary: 'See my work',
     secondary: 'Get in touch',
   },
   work: {
     title: 'Work',
-    intro: 'A selection of brand identity, interface, content and development projects.',
+    intro: 'A selection of brand identity, interface, content, development and game projects.',
     filterLabel: 'Filter projects by type',
     all: 'All',
     categories: {
@@ -103,6 +109,7 @@ const en: typeof pt = {
       interfaces: 'UI/UX and websites',
       social: 'Social media',
       dev: 'Development',
+      jogos: 'Games',
     },
     empty: 'No projects in this category yet. Try one of the other types above.',
     open: 'Open project',
@@ -120,6 +127,11 @@ const en: typeof pt = {
     prev: 'Previous slide',
     next: 'Next slide',
     slideOf: (i: number, n: number) => `${i} of ${n}`,
+    game: 'Game',
+    play: 'Play free on itch.io',
+    trailer: 'Game trailer',
+    credits: 'Team',
+    promo: 'Promo art',
   },
   contact: {
     title: 'Let’s talk',
