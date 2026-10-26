@@ -1,0 +1,134 @@
+---
+import { t, paths, type Lang } from '../i18n/strings';
+import { site } from '../data/site';
+
+interface Props {
+  lang: Lang;
+  alternate: string;
+}
+
+const { lang, alternate } = Astro.props;
+const s = t(lang);
+const home = paths[lang].home;
+---
+
+<header class="header" data-tone="light">
+  <div class="header-inner wrap">
+    <a class="brand" href={home}>{site.name}</a>
+
+    <nav class="nav" aria-label={s.nav.menu}>
+      <ul>
+        <li><a href={`${home}#portfolio`}>{s.nav.work}</a></li>
+        <li><a href={`${home}#contato`}>{s.nav.contact}</a></li>
+      </ul>
+    </nav>
+
+    <a class="lang" href={alternate} hreflang={lang === 'pt' ? 'en' : 'pt-BR'} lang={lang === 'pt' ? 'en' : 'pt-BR'}>
+      <span aria-hidden="true">{s.nav.otherLangShort}</span>
+      <span class="sr-only">{s.nav.otherLang}</span>
+    </a>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    color: var(--fg);
+    transition: color 0.4s var(--ease);
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    transition: opacity 0.4s var(--ease);
+  }
+
+  .header.is-scrolled::before {
+    opacity: 1;
+  }
+
+  .header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 40px);
+    height: 72px;
+  }
+
+  .brand {
+    margin-right: auto;
+    font-size: 1.05rem;
+    font-weight: 450;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: clamp(16px, 2.6vw, 36px);
+  }
+
+  .nav a {
+    text-decoration: none;
+    font-size: 0.97rem;
+    text-underline-offset: 0.3em;
+  }
+
+  .nav a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  .lang {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: border-color 0.25s;
+  }
+
+  .lang:hover {
+    border-color: currentColor;
+  }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>('.header')!;
+  const sections = [...document.querySelectorAll<HTMLElement>('[data-tone]:not(.header)')].filter((el) => !el.closest('dialog, .card'));
+
+  // O cabeçalho adota o tom (claro ou escuro) da seção que está por baixo dele.
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    header.classList.toggle('is-scrolled', window.scrollY > 24);
+    const under = sections.find((s) => {
+      const r = s.getBoundingClientRect();
+      return r.top <= 36 && r.bottom > 36;
+    });
+    header.dataset.tone = under?.dataset.tone ?? 'light';
+  };
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    },
+    { passive: true },
+  );
+  update();
+</script>

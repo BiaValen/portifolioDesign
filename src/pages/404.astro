@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { t, paths } from '../i18n/strings';
+
+const s = t('pt');
+---
+
+<Base lang="pt" alternate={paths.en.home} title={s.notFound.title}>
+  <section class="nf tone" data-tone="light">
+    <div class="wrap">
+      <h1 class="section-title">{s.notFound.title}</h1>
+      <p class="section-intro">{s.notFound.body}</p>
+      <a class="btn btn--ghost" href={paths.pt.home}>{s.notFound.back}</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    min-height: 80svh;
+    padding-block: 160px var(--section);
+  }
+
+  .nf .wrap {
+    display: grid;
+    gap: 24px;
+    justify-items: start;
+  }
+</style>

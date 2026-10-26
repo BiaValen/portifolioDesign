@@ -1,0 +1,84 @@
+---
+import Orbs from './Orbs.astro';
+import { t, type Lang } from '../i18n/strings';
+import { site } from '../data/site';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const s = t(lang).contact;
+// Mostra o endereço do LinkedIn sem "https://www." para ficar mais limpo.
+const linkedinLabel = site.linkedin.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+---
+
+<section class="contact tone" id="contato" data-tone="dark" aria-labelledby="contact-title">
+  <Orbs set="contact" />
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="section-title" id="contact-title">{s.title}</h2>
+      <p class="section-intro">{s.intro}</p>
+    </header>
+
+    <ul class="channels">
+      <li>
+        <span class="ch-label">{s.email}</span>
+        <a class="ch-link" href={`mailto:${site.email}`}>{site.email}</a>
+      </li>
+      <li>
+        <span class="ch-label">{s.linkedin}</span>
+        <a class="ch-link" href={site.linkedin} target="_blank" rel="noopener">{linkedinLabel}</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding-block: var(--section);
+  }
+
+  .channels {
+    display: grid;
+    border-top: 1px solid var(--line);
+  }
+
+  .channels li {
+    display: grid;
+    grid-template-columns: minmax(120px, 1fr) minmax(0, 3fr);
+    align-items: baseline;
+    gap: 16px;
+    padding-block: clamp(20px, 3vw, 32px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .ch-label {
+    color: var(--fg-soft);
+  }
+
+  .ch-link {
+    font-size: var(--step-3);
+    font-weight: 300;
+    line-height: 1.15;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .ch-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+  }
+
+  @media (max-width: 640px) {
+    .channels li {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 6px;
+    }
+
+    .ch-link {
+      font-size: var(--step-2);
+    }
+  }
+</style>
