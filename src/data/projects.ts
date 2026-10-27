@@ -357,7 +357,7 @@ export const projects: Project[] = [
     gallery: [
       {
         title: { pt: 'Posts e stories', en: 'Posts and stories' },
-        images: ['mulheres', 'pais', 'pais-2', 'pais-3', 'namorados-1', 'namorados-2', 'projetos', 'voce-sabia', 'junho-vermelho', 'padronizacao', 'ano-novo', 'ano-novo-2'].map(
+        images: ['mulheres', 'pais-2', 'namorados-1', 'namorados-2', 'projetos', 'voce-sabia', 'junho-vermelho', 'padronizacao', 'ano-novo', 'ano-novo-2'].map(
           (n) => `/portfolio/scitec/posts/${n}.webp`,
         ),
       },
