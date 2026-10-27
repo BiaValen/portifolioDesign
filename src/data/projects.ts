@@ -63,6 +63,8 @@ export type Project = {
     // Parágrafos sobre o jogo, mostrados no case.
     about?: { pt: string; en: string }[];
     credits?: { name: string; role?: { pt: string; en: string } }[];
+    // Observação abaixo da equipe (ex.: origem de artes e sons de terceiros).
+    assetsNote?: { pt: string; en: string };
     images?: string[];
   };
 };
@@ -135,6 +137,10 @@ export const projects: Project[] = [
         },
       ],
       credits: [{ name: 'Bianca Valenciani', role: { pt: 'Game design e UI/UX', en: 'Game design and UI/UX' } }, { name: 'Felipe Calderaro', role: { pt: 'Game design e programação', en: 'Game design and programming' } }],
+      assetsNote: {
+        pt: 'O jogo usa artes e sons gratuitos e comprados de outros artistas, todos listados nos créditos dentro do jogo.',
+        en: 'The game uses free and purchased art and sound from other artists, all listed in the in-game credits.',
+      },
       images: ['/portfolio/fragments-of-eter/divulgacao.webp', '/portfolio/fragments-of-eter/creditos.webp'],
     },
   },
