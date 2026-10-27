@@ -320,8 +320,8 @@ export const projects: Project[] = [
     client: 'SciTec Jr',
     junior: true,
     summary: {
-      pt: 'Carrosséis, posts, stories, flyers, banners e playbook de vendas para a SciTec Jr, empresa júnior de ciência e tecnologia da Unifesp.',
-      en: 'Carousels, posts, stories, flyers, banners and a sales playbook for SciTec Jr, the science and technology junior enterprise at Unifesp.',
+      pt: 'Carrosséis, posts, stories, flyers e banners para a SciTec Jr, empresa júnior de ciência e tecnologia da Unifesp.',
+      en: 'Carousels, posts, stories, flyers and banners for SciTec Jr, the science and technology junior enterprise at Unifesp.',
     },
     services: ['social'],
     year: '2024–2025',
@@ -348,11 +348,6 @@ export const projects: Project[] = [
       { src: 'SciTec Conflitos' },
       { src: 'SciTec Professores' },
       { src: 'SciTec Homem de Ferro' },
-      { src: 'SciTec Programador' },
-      { src: 'SciTec Linus' },
-      { src: 'SciTec Turing' },
-      { src: 'SciTec Calendario' },
-      { src: 'SciTec Playbook' },
     ],
     gallery: [
       {
