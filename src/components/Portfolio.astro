@@ -85,6 +85,7 @@ const count = (c: (typeof categories)[number]) => projects.filter((p) => p.servi
                   <ul class="tags">
                     {p.game?.award && <li class="tag-award">{p.game.award[lang]}</li>}
                     {p.own && <li>{s.own}</li>}
+                    {p.junior && <li>{s.junior}</li>}
                     {p.game && <li>{s.game}</li>}
                     {p.site && <li>{s.site}</li>}
                     {p.app && <li>{p.app.label === 'mobile' ? s.mobile : s.app}</li>}

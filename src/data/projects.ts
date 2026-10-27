@@ -22,6 +22,8 @@ export type Project = {
   client: string;
   // Projeto pessoal, sem cliente.
   own?: boolean;
+  // Feito numa empresa júnior: mostra a etiqueta "Empresa júnior".
+  junior?: boolean;
   summary: { pt: string; en: string };
   services: Category[];
   year: string;
@@ -167,7 +169,6 @@ export const projects: Project[] = [
   {
     id: 'connectcare',
     client: 'ConnectCare',
-    own: true,
     summary: {
       pt: 'Site e app para organizar a saúde: lembretes de remédios, agenda de exames e consultas, receitas digitalizadas e notícias.',
       en: 'A website and app to keep health in order: medication reminders, exam and appointment scheduling, scanned prescriptions and news.',
@@ -201,6 +202,7 @@ export const projects: Project[] = [
   {
     id: 'dona-rosa',
     client: 'Dona Rosa',
+    junior: true,
     summary: {
       pt: 'Site para pizzaria artesanal: cardápio, cursos e eventos, reserva de mesa e uma identidade com ilustrações feitas à mão, no desktop e no celular.',
       en: 'A website for an artisanal pizzeria: menu, classes and events, table booking and a hand-drawn illustrated identity, on desktop and mobile.',
@@ -237,6 +239,7 @@ export const projects: Project[] = [
   {
     id: 'eagle-alliance',
     client: 'Eagle Alliance',
+    junior: true,
     summary: {
       pt: 'Site institucional para empresa de segurança privada: serviços, depoimentos, vagas e contato direto por e-mail ou WhatsApp.',
       en: 'A company website for a private security firm: services, testimonials, careers and direct contact by email or WhatsApp.',
@@ -260,6 +263,7 @@ export const projects: Project[] = [
   {
     id: 'fejesp',
     client: 'FEJESP',
+    junior: true,
     summary: {
       pt: 'Área de eventos do site da federação das empresas juniores de São Paulo: agenda, páginas do Vórtex, do EPEJ e do Prêmio FEJESP, com compra de ingressos.',
       en: 'The events section of the São Paulo junior enterprise federation website: calendar and pages for Vórtex, EPEJ and the FEJESP Award, with ticket sales.',

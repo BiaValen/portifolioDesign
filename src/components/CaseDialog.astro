@@ -35,6 +35,7 @@ const game = p.game;
         <p class="case-meta">
           <span>{p.services.map((c) => s.categories[c]).join(', ')}</span>
           {p.own && <span>{s.own}</span>}
+          {p.junior && <span>{s.junior}</span>}
           <span>{p.year}</span>
         </p>
         {game?.award && <p class="award">{game.award[lang]}</p>}
