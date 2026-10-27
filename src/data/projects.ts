@@ -341,9 +341,9 @@ export const projects: Project[] = [
     gallery: [
       {
         title: { pt: 'Posts e stories', en: 'Posts and stories' },
-        images: ['nucleos', 'mulheres', 'pais', 'ano-novo', 'ano-novo-2'].map((n) => `/portfolio/scitec/posts/${n}.webp`),
+        images: ['mulheres', 'pais', 'ano-novo', 'ano-novo-2'].map((n) => `/portfolio/scitec/posts/${n}.webp`),
       },
-      { title: { pt: 'Flyer', en: 'Flyer' }, images: ['/portfolio/scitec/posts/flyer.webp'] },
+      { title: { pt: 'Flyers', en: 'Flyers' }, images: ['/portfolio/scitec/posts/nucleos.webp', '/portfolio/scitec/posts/flyer.webp'] },
     ],
   },
   {
