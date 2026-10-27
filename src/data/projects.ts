@@ -358,11 +358,11 @@ export const projects: Project[] = [
       },
       {
         title: { pt: 'Flyers', en: 'Flyers' },
-        images: ['nucleos', 'flyer', 'flyer-2'].map((n) => `/portfolio/scitec/posts/${n}.webp`),
+        images: ['nucleos', 'flyer'].map((n) => `/portfolio/scitec/posts/${n}.webp`),
       },
       {
         title: { pt: 'Banners', en: 'Banners' },
-        images: ['diversidade-1', 'diversidade-2', 'diversidade-3', 'diversidade-4', 'probabilidade'].map((n) => `/portfolio/scitec/banners/${n}.webp`),
+        images: ['diversidade-1', 'diversidade-2', 'diversidade-3', 'diversidade-4'].map((n) => `/portfolio/scitec/banners/${n}.webp`),
       },
     ],
   },
