@@ -12,7 +12,7 @@
 // size: tamanho do card na grade. 'wide' (largo), 'tall' (alto) ou 'normal'.
 // cover: imagem do card. Para usar um slide convertido: '/portfolio/sets/<id>/<n>.webp'.
 
-export type Category = 'identidade' | 'interfaces' | 'social' | 'dev' | 'jogos' | 'ilustracao';
+export type Category = 'identidade' | 'interfaces' | 'social' | 'dev' | 'jogos' | 'ilustracao' | 'itens';
 
 export type SourceRef = { src: string; drop?: number[]; order?: number[] };
 
@@ -52,6 +52,8 @@ export type Project = {
   tools?: string[];
   // Ilustrações vetoriais (caminho em public/).
   illustrations?: string[];
+  // Galerias com título próprio (ex.: Camisetas, Boné, Posts).
+  gallery?: { title: { pt: string; en: string }; images: string[] }[];
   // Jogo: link para jogar, trailer, prêmio, ficha técnica, equipe e imagens de divulgação.
   game?: {
     url?: string;
@@ -71,7 +73,7 @@ export type Project = {
   };
 };
 
-export const categories: Category[] = ['identidade', 'interfaces', 'social', 'dev', 'jogos', 'ilustracao'];
+export const categories: Category[] = ['identidade', 'interfaces', 'social', 'dev', 'jogos', 'ilustracao', 'itens'];
 
 export const projects: Project[] = [
   {
@@ -281,6 +283,68 @@ export const projects: Project[] = [
         { name: { pt: 'Prêmio FEJESP', en: 'FEJESP Award' }, screen: '/portfolio/fejesp/telas/premio.webp', full: '/portfolio/fejesp/paginas/premio.webp' },
       ],
     },
+  },
+  {
+    id: 'scitec-itens',
+    client: 'SciTec Jr: itens',
+    junior: true,
+    summary: {
+      pt: 'Camisetas, boné, adesivos e cartões de visita para a SciTec Jr, com o mascote e as cores da empresa júnior.',
+      en: 'T-shirts, a cap, stickers and business cards for SciTec Jr, featuring the junior enterprise’s mascot and colors.',
+    },
+    services: ['itens'],
+    year: '2025',
+    size: 'normal',
+    cover: '/portfolio/scitec/itens/camiseta-mockup-2.webp',
+    gallery: [
+      {
+        title: { pt: 'Camisetas', en: 'T-shirts' },
+        images: [
+          '/portfolio/scitec/itens/camiseta-mockup-1.webp',
+          '/portfolio/scitec/itens/camiseta-mockup-2.webp',
+          '/portfolio/scitec/itens/camiseta-mockup-3.webp',
+          ...[1, 2, 3, 4].map((n) => `/portfolio/scitec/itens/camiseta-01-${n}.webp`),
+          ...[1, 2, 3, 4, 5, 6, 7].map((n) => `/portfolio/scitec/itens/camiseta-02-${n}.webp`),
+        ],
+      },
+      { title: { pt: 'Boné', en: 'Cap' }, images: ['/portfolio/scitec/itens/bone-1.webp', '/portfolio/scitec/itens/bone-2.webp'] },
+      { title: { pt: 'Adesivos', en: 'Stickers' }, images: ['/portfolio/scitec/itens/adesivos.webp'] },
+      {
+        title: { pt: 'Cartão de visita', en: 'Business card' },
+        images: [1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => `/portfolio/scitec/itens/cartao-${n}.webp`),
+      },
+    ],
+  },
+  {
+    id: 'scitec-jr',
+    client: 'SciTec Jr',
+    junior: true,
+    summary: {
+      pt: 'Carrosséis, posts, stories e flyer para a SciTec Jr, empresa júnior de ciência e tecnologia da Unifesp: dicas, datas comemorativas e os núcleos da empresa.',
+      en: 'Carousels, posts, stories and a flyer for SciTec Jr, the science and technology junior enterprise at Unifesp: tips, special dates and the company’s teams.',
+    },
+    services: ['social'],
+    year: '2024–2025',
+    size: 'normal',
+    cover: '/portfolio/scitec/posts/nucleos.webp',
+    stack: { src: 'SciTec Dev Web' },
+    carousels: [
+      { src: 'SciTec Conciliar' },
+      { src: 'SciTec Dados' },
+      { src: 'SciTec Dev Web' },
+      { src: 'SciTec Biomedica' },
+      { src: 'SciTec IA' },
+      { src: 'SciTec Apps' },
+      { src: 'SciTec Volta as aulas' },
+      { src: 'SciTec Professor' },
+    ],
+    gallery: [
+      {
+        title: { pt: 'Posts e stories', en: 'Posts and stories' },
+        images: ['nucleos', 'mulheres', 'pais', 'ano-novo', 'ano-novo-2'].map((n) => `/portfolio/scitec/posts/${n}.webp`),
+      },
+      { title: { pt: 'Flyer', en: 'Flyer' }, images: ['/portfolio/scitec/posts/flyer.webp'] },
+    ],
   },
   {
     id: 'paes-de-sal',

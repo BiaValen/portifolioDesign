@@ -18,6 +18,7 @@ const identity = (p.identity ?? []).flatMap((item) =>
   typeof item === 'string' ? [image(item)] : (getSet(item)?.slides.map((sl) => sl.src) ?? []),
 );
 const illustrations = (p.illustrations ?? []).map(image);
+const gallery = (p.gallery ?? []).map((g) => ({ title: g.title[lang], images: g.images.map(image) }));
 const carousels = (p.carousels ?? []).map((c) => getSet(c)).filter((c) => c !== undefined);
 const pages = p.site?.pages ?? [];
 const mobile = p.site?.device === 'mobile';
@@ -298,6 +299,17 @@ const game = p.game;
         </section>
       )
     }
+
+    {gallery.map((g) => (
+      <section class="block" aria-label={g.title}>
+        <h3 class="block-title">{g.title}</h3>
+        <div class:list={['id-grid', g.images.length > 1 && 'is-art']}>
+          {g.images.map((src) => (
+            <img src={src} alt="" loading="lazy" decoding="async" />
+          ))}
+        </div>
+      </section>
+    ))}
   </div>
 </dialog>
 

@@ -2,13 +2,15 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import media from '../data/portfolio-media.json';
+// Carrosséis montados à mão (fora do `npm run portfolio`, que apaga e recria os conjuntos).
+import extra from '../data/extra-media.json';
 import { setId, type SourceRef } from '../data/projects';
 import { withBase } from './url';
 
 type Slide = { src: string; thumb: string };
 type MediaSet = { w: number; h: number; slides: Slide[] };
 
-const sets = media.sets as Record<string, MediaSet>;
+const sets = { ...extra.sets, ...media.sets } as Record<string, MediaSet>;
 const images = media.images as Record<string, { src: string; w: number; h: number }>;
 
 // Arquivo apagado à mão de public/ não deve virar uma imagem quebrada no site.

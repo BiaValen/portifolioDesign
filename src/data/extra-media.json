@@ -1,0 +1,228 @@
+{
+  "sets": {
+    "scitec-conciliar": {
+      "w": 1080,
+      "h": 1080,
+      "slides": [
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-conciliar/1.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-conciliar/1-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-conciliar/2.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-conciliar/2-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-conciliar/3.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-conciliar/3-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-conciliar/4.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-conciliar/4-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-conciliar/5.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-conciliar/5-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-conciliar/6.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-conciliar/6-t.webp"
+        }
+      ]
+    },
+    "scitec-dados": {
+      "w": 1080,
+      "h": 1080,
+      "slides": [
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dados/1.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dados/1-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dados/2.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dados/2-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dados/3.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dados/3-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dados/4.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dados/4-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dados/5.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dados/5-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dados/6.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dados/6-t.webp"
+        }
+      ]
+    },
+    "scitec-dev-web": {
+      "w": 1080,
+      "h": 1080,
+      "slides": [
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dev-web/1.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dev-web/1-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dev-web/2.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dev-web/2-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dev-web/3.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dev-web/3-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dev-web/4.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dev-web/4-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dev-web/5.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dev-web/5-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-dev-web/6.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-dev-web/6-t.webp"
+        }
+      ]
+    },
+    "scitec-biomedica": {
+      "w": 1080,
+      "h": 1067,
+      "slides": [
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-biomedica/1.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-biomedica/1-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-biomedica/2.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-biomedica/2-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-biomedica/3.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-biomedica/3-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-biomedica/4.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-biomedica/4-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-biomedica/5.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-biomedica/5-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-biomedica/6.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-biomedica/6-t.webp"
+        }
+      ]
+    },
+    "scitec-ia": {
+      "w": 1080,
+      "h": 1080,
+      "slides": [
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-ia/1.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-ia/1-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-ia/2.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-ia/2-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-ia/3.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-ia/3-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-ia/4.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-ia/4-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-ia/5.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-ia/5-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-ia/6.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-ia/6-t.webp"
+        }
+      ]
+    },
+    "scitec-apps": {
+      "w": 1080,
+      "h": 1350,
+      "slides": [
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-apps/1.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-apps/1-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-apps/2.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-apps/2-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-apps/3.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-apps/3-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-apps/4.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-apps/4-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-apps/5.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-apps/5-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-apps/6.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-apps/6-t.webp"
+        }
+      ]
+    },
+    "scitec-volta-as-aulas": {
+      "w": 1080,
+      "h": 1079,
+      "slides": [
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/1.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/1-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/2.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/2-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/3.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/3-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/4.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/4-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/5.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/5-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/6.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-volta-as-aulas/6-t.webp"
+        }
+      ]
+    },
+    "scitec-professor": {
+      "w": 1080,
+      "h": 1079,
+      "slides": [
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-professor/1.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-professor/1-t.webp"
+        },
+        {
+          "src": "/portfolio/scitec/carrosseis/scitec-professor/2.webp",
+          "thumb": "/portfolio/scitec/carrosseis/scitec-professor/2-t.webp"
+        }
+      ]
+    }
+  }
+}
