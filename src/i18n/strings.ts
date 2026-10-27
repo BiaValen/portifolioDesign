@@ -31,7 +31,7 @@ const pt = {
   },
   work: {
     title: 'Portfólio',
-    intro: 'Uma seleção de projetos de identidade visual, interfaces, conteúdo, desenvolvimento e jogos.',
+    intro: 'Uma seleção de projetos de identidade visual, interfaces, conteúdo, desenvolvimento, jogos e ilustração.',
     filterLabel: 'Filtrar projetos por tipo',
     all: 'Todos',
     categories: {
@@ -40,6 +40,7 @@ const pt = {
       social: 'Redes sociais',
       dev: 'Desenvolvimento',
       jogos: 'Jogos',
+      ilustracao: 'Ilustração',
     },
     empty: 'Ainda não há projetos nesta categoria. Veja os outros tipos acima.',
     open: 'Abrir projeto',
@@ -51,6 +52,7 @@ const pt = {
     app: 'Aplicativo',
     video: 'Vídeo navegando pelo site',
     identity: 'Identidade visual',
+    illustrations: 'Ilustrações vetoriais',
     social: 'Redes sociais',
     carousels: (n: number) => (n === 1 ? '1 carrossel' : `${n} carrosséis`),
     pickCarousel: 'Escolha um carrossel',
@@ -101,7 +103,7 @@ const en: typeof pt = {
   },
   work: {
     title: 'Work',
-    intro: 'A selection of brand identity, interface, content, development and game projects.',
+    intro: 'A selection of brand identity, interface, content, development, game and illustration projects.',
     filterLabel: 'Filter projects by type',
     all: 'All',
     categories: {
@@ -110,6 +112,7 @@ const en: typeof pt = {
       social: 'Social media',
       dev: 'Development',
       jogos: 'Games',
+      ilustracao: 'Illustration',
     },
     empty: 'No projects in this category yet. Try one of the other types above.',
     open: 'Open project',
@@ -121,6 +124,7 @@ const en: typeof pt = {
     app: 'App',
     video: 'Video browsing the website',
     identity: 'Brand identity',
+    illustrations: 'Vector illustrations',
     social: 'Social media',
     carousels: (n: number) => (n === 1 ? '1 carousel' : `${n} carousels`),
     pickCarousel: 'Choose a carousel',

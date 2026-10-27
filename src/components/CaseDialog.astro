@@ -1,5 +1,5 @@
 ---
-// Case de um cliente em tela cheia: jogo, site, identidade visual e carrosséis.
+// Case de um cliente em tela cheia: jogo, site, identidade visual, carrosséis e ilustrações.
 // As imagens só carregam quando o case é aberto (e cada carrossel, quando é escolhido).
 import { t, type Lang } from '../i18n/strings';
 import type { Project } from '../data/projects';
@@ -17,6 +17,7 @@ const id = `case-${p.id}`;
 const identity = (p.identity ?? []).flatMap((item) =>
   typeof item === 'string' ? [image(item)] : (getSet(item)?.slides.map((sl) => sl.src) ?? []),
 );
+const illustrations = (p.illustrations ?? []).map(image);
 const carousels = (p.carousels ?? []).map((c) => getSet(c)).filter((c) => c !== undefined);
 const pages = p.site?.pages ?? [];
 const mobile = p.site?.device === 'mobile';
@@ -232,6 +233,19 @@ const game = p.game;
           <h3 class="block-title">{s.identity}</h3>
           <div class:list={['id-grid', identity.length > 2 && 'is-many']}>
             {identity.map((src) => (
+              <img src={src} alt="" loading="lazy" decoding="async" />
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      illustrations.length > 0 && (
+        <section class="block" aria-label={s.illustrations}>
+          <h3 class="block-title">{s.illustrations}</h3>
+          <div class="id-grid is-art">
+            {illustrations.map((src) => (
               <img src={src} alt="" loading="lazy" decoding="async" />
             ))}
           </div>
@@ -699,6 +713,11 @@ const game = p.game;
 
   .id-grid.is-many {
     grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  }
+
+  .id-grid.is-art {
+    grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+    align-items: start;
   }
 
   .id-grid img {

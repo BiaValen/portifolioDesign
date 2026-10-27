@@ -12,7 +12,7 @@
 // size: tamanho do card na grade. 'wide' (largo), 'tall' (alto) ou 'normal'.
 // cover: imagem do card. Para usar um slide convertido: '/portfolio/sets/<id>/<n>.webp'.
 
-export type Category = 'identidade' | 'interfaces' | 'social' | 'dev' | 'jogos';
+export type Category = 'identidade' | 'interfaces' | 'social' | 'dev' | 'jogos' | 'ilustracao';
 
 export type SourceRef = { src: string; drop?: number[]; order?: number[] };
 
@@ -43,6 +43,10 @@ export type Project = {
   // Imagens soltas (caminho em public/) ou galerias convertidas do Canva.
   identity?: (string | SourceRef)[];
   carousels?: SourceRef[];
+  // Ferramentas usadas, mostradas como etiquetas no card (ex.: ['Figma']).
+  tools?: string[];
+  // Ilustrações vetoriais (caminho em public/).
+  illustrations?: string[];
   // Jogo: link para jogar, trailer, prêmio, ficha técnica, equipe e imagens de divulgação.
   game?: {
     url?: string;
@@ -58,7 +62,7 @@ export type Project = {
   };
 };
 
-export const categories: Category[] = ['identidade', 'interfaces', 'social', 'dev', 'jogos'];
+export const categories: Category[] = ['identidade', 'interfaces', 'social', 'dev', 'jogos', 'ilustracao'];
 
 export const projects: Project[] = [
   {
@@ -129,6 +133,26 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 'ilustracoes',
+    client: 'Ilustrações vetoriais',
+    own: true,
+    summary: {
+      pt: 'Personagens e cenas desenhados no Illustrator, com gradientes, luz e sombra construídos em vetor.',
+      en: 'Characters and scenes drawn in Illustrator, with gradients, light and shadow built in vector.',
+    },
+    services: ['ilustracao'],
+    year: '2025–2026',
+    size: 'normal',
+    tools: ['Illustrator'],
+    cover: '/portfolio/ilustracoes/menina.webp',
+    illustrations: [
+      '/portfolio/ilustracoes/menina.webp',
+      '/portfolio/ilustracoes/personagem.webp',
+      '/portfolio/ilustracoes/morcego.webp',
+      '/portfolio/ilustracoes/psp.webp',
+    ],
+  },
+  {
     id: 'paes-de-sal',
     client: 'Pães de Sal',
     summary: {
@@ -138,6 +162,7 @@ export const projects: Project[] = [
     services: ['interfaces', 'dev', 'social'],
     year: '2026',
     size: 'wide',
+    tools: ['Figma'],
     cover: '/portfolio/paes-de-sal.png',
     site: { url: 'https://paesdesal.com/', image: '/portfolio/paes-de-sal.png' },
     carousels: [{ src: 'Paes de sal 02' }, { src: 'Paes de sal 07' }, { src: 'Paes de sal 05' }, { src: 'Paes de sal 06' }, { src: 'Paes de sal 11' }],
@@ -166,6 +191,7 @@ export const projects: Project[] = [
     services: ['interfaces', 'dev', 'social'],
     year: '2025–2026',
     size: 'wide',
+    tools: ['Figma'],
     cover: '/portfolio/dracarolinegastro.png',
     site: { url: 'https://www.dracarolinegastro.com.br/', image: '/portfolio/dracarolinegastro.png' },
     carousels: [{ src: 'Carol 06' }, { src: 'Carol 09' }, { src: 'Carol 12' }, { src: 'Carol 04' }, { src: 'Carol 05' }, { src: 'Carol 14' }],
