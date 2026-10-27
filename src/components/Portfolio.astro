@@ -87,6 +87,7 @@ const count = (c: (typeof categories)[number]) => projects.filter((p) => p.servi
                     {p.own && <li>{s.own}</li>}
                     {p.game && <li>{s.game}</li>}
                     {p.site && <li>{s.site}</li>}
+                    {p.app && <li>{s.app}</li>}
                     {p.identity && <li>{s.identity}</li>}
                     {p.tools?.map((tool) => <li>{tool}</li>)}
                     {nCarousels > 0 && <li>{s.carousels(nCarousels)}</li>}

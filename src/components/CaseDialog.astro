@@ -21,6 +21,7 @@ const illustrations = (p.illustrations ?? []).map(image);
 const carousels = (p.carousels ?? []).map((c) => getSet(c)).filter((c) => c !== undefined);
 const pages = p.site?.pages ?? [];
 const mobile = p.site?.device === 'mobile';
+const appPages = p.app?.pages ?? [];
 const game = p.game;
 ---
 
@@ -223,6 +224,39 @@ const game = p.game;
               {s.visit}
             </a>
           )}
+        </section>
+      )
+    }
+
+    {
+      appPages.length > 0 && (
+        <section class="block" aria-label={s.app}>
+          <h3 class="block-title">{s.app}</h3>
+          <div class="site-media is-mobile">
+            <div class="pages">
+              <div class="browser is-phone">
+                <div class="browser-bar">
+                  <span aria-hidden="true" />
+                  <span aria-hidden="true" />
+                  <span aria-hidden="true" />
+                  <p class="page-name" aria-live="polite">{appPages[0].name[lang]}</p>
+                </div>
+                {appPages.map((pg, i) => (
+                  <div class="page-scroll" data-page={i} hidden={i > 0} tabindex="0" aria-label={pg.name[lang]}>
+                    <img src={image(pg.full)} alt={`${p.client}: ${pg.name[lang]}`} loading="lazy" decoding="async" />
+                  </div>
+                ))}
+              </div>
+              <div class="page-picker" role="group" aria-label={s.app}>
+                {appPages.map((pg, i) => (
+                  <button type="button" class="page-pick" data-pick-page={i} data-name={pg.name[lang]} aria-pressed={String(i === 0)}>
+                    <img src={image(pg.screen)} alt="" loading="lazy" decoding="async" />
+                    <span>{pg.name[lang]}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
       )
     }
@@ -783,18 +817,21 @@ const game = p.game;
     }
 
     // Páginas do site: a miniatura escolhida abre a página inteira na moldura.
-    const pageViews = [...dialog.querySelectorAll<HTMLElement>('.page-scroll')];
-    const pagePicks = [...dialog.querySelectorAll<HTMLButtonElement>('.page-pick')];
-    const pageName = dialog.querySelector<HTMLElement>('.page-name');
-    pagePicks.forEach((pick) =>
-      pick.addEventListener('click', () => {
-        const i = Number(pick.dataset.pickPage);
-        pageViews.forEach((v, j) => (v.hidden = j !== i));
-        pagePicks.forEach((pk, j) => pk.setAttribute('aria-pressed', String(j === i)));
-        pageViews[i].scrollTop = 0;
-        if (pageName) pageName.textContent = pick.dataset.name!;
-      }),
-    );
+    // Cada bloco de páginas (site e app) tem a sua moldura e as suas miniaturas.
+    dialog.querySelectorAll<HTMLElement>('.pages').forEach((block) => {
+      const pageViews = [...block.querySelectorAll<HTMLElement>('.page-scroll')];
+      const pagePicks = [...block.querySelectorAll<HTMLButtonElement>('.page-pick')];
+      const pageName = block.querySelector<HTMLElement>('.page-name');
+      pagePicks.forEach((pick) =>
+        pick.addEventListener('click', () => {
+          const i = Number(pick.dataset.pickPage);
+          pageViews.forEach((v, j) => (v.hidden = j !== i));
+          pagePicks.forEach((pk, j) => pk.setAttribute('aria-pressed', String(j === i)));
+          pageViews[i].scrollTop = 0;
+          if (pageName) pageName.textContent = pick.dataset.name!;
+        }),
+      );
+    });
 
     const tracks = [...dialog.querySelectorAll<HTMLElement>('.track')];
     if (!tracks.length) return;

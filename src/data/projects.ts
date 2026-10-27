@@ -40,6 +40,8 @@ export type Project = {
     // 'mobile' mostra o vídeo e as páginas numa moldura de celular.
     device?: 'desktop' | 'mobile';
   };
+  // App mobile mostrado junto com o site, numa moldura de celular.
+  app?: { pages: { name: { pt: string; en: string }; screen: string; full: string }[] };
   // Imagens soltas (caminho em public/) ou galerias convertidas do Canva.
   identity?: (string | SourceRef)[];
   carousels?: SourceRef[];
@@ -96,7 +98,7 @@ export const projects: Project[] = [
       credits: [
         { name: 'Letícia Akemi Ikemoto', role: { pt: 'Arte e game design', en: 'Art and game design' } },
         { name: 'Felipe Calderaro', role: { pt: 'Programação e game design', en: 'Programming and game design' } },
-        { name: 'Bianca Valenciani', role: { pt: 'Efeitos sonoros e game design', en: 'Sound effects and game design' } },
+        { name: 'Bianca Valenciani', role: { pt: 'Game design, UI/UX e efeitos sonoros (SFX)', en: 'Game design, UI/UX and sound effects (SFX)' } },
       ],
       images: ['/portfolio/quito/divulgacao.webp', '/portfolio/quito/creditos.webp'],
     },
@@ -128,7 +130,7 @@ export const projects: Project[] = [
           en: 'Each stage is the realm of one Ether: wood, fire, earth, metal and water. Survive the hordes closing in, grow stronger with each element and face Xuan Zhi in the void.',
         },
       ],
-      credits: [{ name: 'Bianca Valenciani' }, { name: 'Felipe Calderaro' }],
+      credits: [{ name: 'Bianca Valenciani', role: { pt: 'Game design e UI/UX', en: 'Game design and UI/UX' } }, { name: 'Felipe Calderaro' }],
       images: ['/portfolio/fragments-of-eter/divulgacao.webp', '/portfolio/fragments-of-eter/creditos.webp'],
     },
   },
@@ -151,6 +153,40 @@ export const projects: Project[] = [
       '/portfolio/ilustracoes/morcego.webp',
       '/portfolio/ilustracoes/psp.webp',
     ],
+  },
+  {
+    id: 'connectcare',
+    client: 'ConnectCare',
+    own: true,
+    summary: {
+      pt: 'Site e app para organizar a saúde: lembretes de remédios, agenda de exames e consultas, receitas digitalizadas e notícias.',
+      en: 'A website and app to keep health in order: medication reminders, exam and appointment scheduling, scanned prescriptions and news.',
+    },
+    services: ['interfaces'],
+    year: '2025',
+    size: 'normal',
+    tools: ['Figma'],
+    cover: '/portfolio/connectcare/telas/nao-logado.webp',
+    site: {
+      pages: [
+        { name: { pt: 'Início', en: 'Home' }, screen: '/portfolio/connectcare/telas/nao-logado.webp', full: '/portfolio/connectcare/paginas/nao-logado.webp' },
+        { name: { pt: 'Painel', en: 'Dashboard' }, screen: '/portfolio/connectcare/telas/logado.webp', full: '/portfolio/connectcare/paginas/logado.webp' },
+        { name: { pt: 'Receitas', en: 'Prescriptions' }, screen: '/portfolio/connectcare/telas/receitas.webp', full: '/portfolio/connectcare/paginas/receitas.webp' },
+        { name: { pt: 'Conta', en: 'Account' }, screen: '/portfolio/connectcare/telas/conta.webp', full: '/portfolio/connectcare/paginas/conta.webp' },
+      ],
+    },
+    app: {
+      pages: [
+        { name: { pt: 'Abertura', en: 'Welcome' }, screen: '/portfolio/connectcare/app/inicial.webp', full: '/portfolio/connectcare/app/inicial.webp' },
+        { name: { pt: 'Login', en: 'Login' }, screen: '/portfolio/connectcare/app/login.webp', full: '/portfolio/connectcare/app/login.webp' },
+        { name: { pt: 'Início', en: 'Home' }, screen: '/portfolio/connectcare/app/home.webp', full: '/portfolio/connectcare/app/home.webp' },
+        { name: { pt: 'Novo lembrete', en: 'New reminder' }, screen: '/portfolio/connectcare/app/lembrete.webp', full: '/portfolio/connectcare/app/lembrete.webp' },
+        { name: { pt: 'Exames', en: 'Exams' }, screen: '/portfolio/connectcare/app/exames.webp', full: '/portfolio/connectcare/app/exames.webp' },
+        { name: { pt: 'Consulta', en: 'Appointment' }, screen: '/portfolio/connectcare/app/consulta.webp', full: '/portfolio/connectcare/app/consulta.webp' },
+        { name: { pt: 'Receitas', en: 'Prescriptions' }, screen: '/portfolio/connectcare/app/receitas.webp', full: '/portfolio/connectcare/app/receitas.webp' },
+        { name: { pt: 'Digitalizar', en: 'Scan' }, screen: '/portfolio/connectcare/app/digitalizar.webp', full: '/portfolio/connectcare/app/digitalizar.webp' },
+      ],
+    },
   },
   {
     id: 'paes-de-sal',
