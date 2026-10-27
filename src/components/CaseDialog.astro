@@ -22,6 +22,7 @@ const carousels = (p.carousels ?? []).map((c) => getSet(c)).filter((c) => c !== 
 const pages = p.site?.pages ?? [];
 const mobile = p.site?.device === 'mobile';
 const appPages = p.app?.pages ?? [];
+const appLabel = p.app?.label === 'mobile' ? s.mobile : s.app;
 const game = p.game;
 ---
 
@@ -89,10 +90,19 @@ const game = p.game;
             )}
           </div>
 
-          {game.url && (
-            <a class="btn" href={game.url} target="_blank" rel="noopener">
-              {s.play}
-            </a>
+          {(game.url || game.teaser) && (
+            <div class="game-links">
+              {game.url && (
+                <a class="btn" href={game.url} target="_blank" rel="noopener">
+                  {s.play}
+                </a>
+              )}
+              {game.teaser && (
+                <a class="btn btn--ghost" href={game.teaser} target="_blank" rel="noopener">
+                  {s.teaser}
+                </a>
+              )}
+            </div>
           )}
         </section>
       )
@@ -230,8 +240,8 @@ const game = p.game;
 
     {
       appPages.length > 0 && (
-        <section class="block" aria-label={s.app}>
-          <h3 class="block-title">{s.app}</h3>
+        <section class="block" aria-label={appLabel}>
+          <h3 class="block-title">{appLabel}</h3>
           <div class="site-media is-mobile">
             <div class="pages">
               <div class="browser is-phone">
@@ -247,7 +257,7 @@ const game = p.game;
                   </div>
                 ))}
               </div>
-              <div class="page-picker" role="group" aria-label={s.app}>
+              <div class="page-picker" role="group" aria-label={appLabel}>
                 {appPages.map((pg, i) => (
                   <button type="button" class="page-pick" data-pick-page={i} data-name={pg.name[lang]} aria-pressed={String(i === 0)}>
                     <img src={image(pg.screen)} alt="" loading="lazy" decoding="async" />
@@ -691,6 +701,12 @@ const game = p.game;
 
   .game-facts {
     color: var(--accent);
+  }
+
+  .game-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   .credits {

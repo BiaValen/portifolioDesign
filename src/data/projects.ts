@@ -41,7 +41,8 @@ export type Project = {
     device?: 'desktop' | 'mobile';
   };
   // App mobile mostrado junto com o site, numa moldura de celular.
-  app?: { pages: { name: { pt: string; en: string }; screen: string; full: string }[] };
+  // label 'mobile' mostra "Versão mobile" no lugar de "Aplicativo".
+  app?: { label?: 'mobile'; pages: { name: { pt: string; en: string }; screen: string; full: string }[] };
   // Imagens soltas (caminho em public/) ou galerias convertidas do Canva.
   identity?: (string | SourceRef)[];
   carousels?: SourceRef[];
@@ -52,6 +53,8 @@ export type Project = {
   // Jogo: link para jogar, trailer, prêmio, ficha técnica, equipe e imagens de divulgação.
   game?: {
     url?: string;
+    // Link externo para um vídeo (ex.: teaser no YouTube).
+    teaser?: string;
     video?: string;
     poster?: string;
     award?: { pt: string; en: string };
@@ -116,6 +119,7 @@ export const projects: Project[] = [
     cover: '/portfolio/fragments-of-eter/poster.webp',
     game: {
       url: 'https://calderaro.itch.io/fragments-of-eter',
+      teaser: 'https://www.youtube.com/watch?v=gy1Nt0DnJ9I',
       video: '/portfolio/fragments-of-eter/trailer.mp4',
       poster: '/portfolio/fragments-of-eter/poster.webp',
       award: { pt: 'Vencedor da Mostra Cultural de Jogos da Unifesp', en: 'Winner of the Unifesp Cultural Game Showcase' },
@@ -130,7 +134,7 @@ export const projects: Project[] = [
           en: 'Each stage is the realm of one Ether: wood, fire, earth, metal and water. Survive the hordes closing in, grow stronger with each element and face Xuan Zhi in the void.',
         },
       ],
-      credits: [{ name: 'Bianca Valenciani', role: { pt: 'Game design e UI/UX', en: 'Game design and UI/UX' } }, { name: 'Felipe Calderaro' }],
+      credits: [{ name: 'Bianca Valenciani', role: { pt: 'Game design e UI/UX', en: 'Game design and UI/UX' } }, { name: 'Felipe Calderaro', role: { pt: 'Game design e programação', en: 'Game design and programming' } }],
       images: ['/portfolio/fragments-of-eter/divulgacao.webp', '/portfolio/fragments-of-eter/creditos.webp'],
     },
   },
@@ -185,6 +189,86 @@ export const projects: Project[] = [
         { name: { pt: 'Consulta', en: 'Appointment' }, screen: '/portfolio/connectcare/app/consulta.webp', full: '/portfolio/connectcare/app/consulta.webp' },
         { name: { pt: 'Receitas', en: 'Prescriptions' }, screen: '/portfolio/connectcare/app/receitas.webp', full: '/portfolio/connectcare/app/receitas.webp' },
         { name: { pt: 'Digitalizar', en: 'Scan' }, screen: '/portfolio/connectcare/app/digitalizar.webp', full: '/portfolio/connectcare/app/digitalizar.webp' },
+      ],
+    },
+  },
+  {
+    id: 'dona-rosa',
+    client: 'Dona Rosa',
+    summary: {
+      pt: 'Site para pizzaria artesanal: cardápio, cursos e eventos, reserva de mesa e uma identidade com ilustrações feitas à mão, no desktop e no celular.',
+      en: 'A website for an artisanal pizzeria: menu, classes and events, table booking and a hand-drawn illustrated identity, on desktop and mobile.',
+    },
+    services: ['interfaces'],
+    year: '2025',
+    size: 'normal',
+    tools: ['Figma'],
+    cover: '/portfolio/dona-rosa/telas/home.webp',
+    site: {
+      pages: [
+        { name: { pt: 'Início', en: 'Home' }, screen: '/portfolio/dona-rosa/telas/home.webp', full: '/portfolio/dona-rosa/paginas/home.webp' },
+        { name: { pt: 'Cardápio', en: 'Menu' }, screen: '/portfolio/dona-rosa/telas/cardapio.webp', full: '/portfolio/dona-rosa/paginas/cardapio.webp' },
+        { name: { pt: 'Quem somos', en: 'About' }, screen: '/portfolio/dona-rosa/telas/quem-somos.webp', full: '/portfolio/dona-rosa/paginas/quem-somos.webp' },
+        { name: { pt: 'Cursos e eventos', en: 'Classes and events' }, screen: '/portfolio/dona-rosa/telas/cursos-eventos.webp', full: '/portfolio/dona-rosa/paginas/cursos-eventos.webp' },
+        { name: { pt: 'Saúde e sustentabilidade', en: 'Health and sustainability' }, screen: '/portfolio/dona-rosa/telas/saude.webp', full: '/portfolio/dona-rosa/paginas/saude.webp' },
+        { name: { pt: 'Fotos', en: 'Photos' }, screen: '/portfolio/dona-rosa/telas/fotos.webp', full: '/portfolio/dona-rosa/paginas/fotos.webp' },
+        { name: { pt: 'Contato', en: 'Contact' }, screen: '/portfolio/dona-rosa/telas/contato.webp', full: '/portfolio/dona-rosa/paginas/contato.webp' },
+      ],
+    },
+    app: {
+      label: 'mobile',
+      pages: [
+        { name: { pt: 'Início', en: 'Home' }, screen: '/portfolio/dona-rosa/app/home.webp', full: '/portfolio/dona-rosa/app-paginas/home.webp' },
+        { name: { pt: 'Menu', en: 'Menu' }, screen: '/portfolio/dona-rosa/app/menu.webp', full: '/portfolio/dona-rosa/app-paginas/menu.webp' },
+        { name: { pt: 'Quem somos', en: 'About' }, screen: '/portfolio/dona-rosa/app/quem-somos.webp', full: '/portfolio/dona-rosa/app-paginas/quem-somos.webp' },
+        { name: { pt: 'Cursos e eventos', en: 'Classes and events' }, screen: '/portfolio/dona-rosa/app/cursos-eventos.webp', full: '/portfolio/dona-rosa/app-paginas/cursos-eventos.webp' },
+        { name: { pt: 'Saúde', en: 'Health' }, screen: '/portfolio/dona-rosa/app/saude.webp', full: '/portfolio/dona-rosa/app-paginas/saude.webp' },
+        { name: { pt: 'Fotos', en: 'Photos' }, screen: '/portfolio/dona-rosa/app/fotos.webp', full: '/portfolio/dona-rosa/app-paginas/fotos.webp' },
+        { name: { pt: 'Contato', en: 'Contact' }, screen: '/portfolio/dona-rosa/app/contato.webp', full: '/portfolio/dona-rosa/app-paginas/contato.webp' },
+      ],
+    },
+  },
+  {
+    id: 'eagle-alliance',
+    client: 'Eagle Alliance',
+    summary: {
+      pt: 'Site institucional para empresa de segurança privada: serviços, depoimentos, vagas e contato direto por e-mail ou WhatsApp.',
+      en: 'A company website for a private security firm: services, testimonials, careers and direct contact by email or WhatsApp.',
+    },
+    services: ['interfaces'],
+    year: '2024',
+    size: 'normal',
+    tools: ['Figma'],
+    cover: '/portfolio/eagle-alliance/telas/home.webp',
+    site: {
+      pages: [
+        { name: { pt: 'Início', en: 'Home' }, screen: '/portfolio/eagle-alliance/telas/home.webp', full: '/portfolio/eagle-alliance/paginas/home.webp' },
+        { name: { pt: 'Serviços', en: 'Services' }, screen: '/portfolio/eagle-alliance/telas/servicos.webp', full: '/portfolio/eagle-alliance/paginas/servicos.webp' },
+        { name: { pt: 'Quem somos', en: 'About' }, screen: '/portfolio/eagle-alliance/telas/quem-somos.webp', full: '/portfolio/eagle-alliance/paginas/quem-somos.webp' },
+        { name: { pt: 'Trabalhe conosco', en: 'Careers' }, screen: '/portfolio/eagle-alliance/telas/trabalhe-conosco.webp', full: '/portfolio/eagle-alliance/paginas/trabalhe-conosco.webp' },
+        { name: { pt: 'Contato', en: 'Contact' }, screen: '/portfolio/eagle-alliance/telas/contato.webp', full: '/portfolio/eagle-alliance/paginas/contato.webp' },
+        { name: { pt: 'Componentes', en: 'Components' }, screen: '/portfolio/eagle-alliance/telas/componentes.webp', full: '/portfolio/eagle-alliance/paginas/componentes.webp' },
+      ],
+    },
+  },
+  {
+    id: 'fejesp',
+    client: 'FEJESP',
+    summary: {
+      pt: 'Área de eventos do site da federação das empresas juniores de São Paulo: agenda, páginas do Vórtex, do EPEJ e do Prêmio FEJESP, com compra de ingressos.',
+      en: 'The events section of the São Paulo junior enterprise federation website: calendar and pages for Vórtex, EPEJ and the FEJESP Award, with ticket sales.',
+    },
+    services: ['interfaces'],
+    year: '2024',
+    size: 'normal',
+    tools: ['Figma'],
+    cover: '/portfolio/fejesp/telas/vortex.webp',
+    site: {
+      pages: [
+        { name: { pt: 'Eventos', en: 'Events' }, screen: '/portfolio/fejesp/telas/eventos.webp', full: '/portfolio/fejesp/paginas/eventos.webp' },
+        { name: { pt: 'Vórtex', en: 'Vórtex' }, screen: '/portfolio/fejesp/telas/vortex.webp', full: '/portfolio/fejesp/paginas/vortex.webp' },
+        { name: { pt: 'EPEJ', en: 'EPEJ' }, screen: '/portfolio/fejesp/telas/epej.webp', full: '/portfolio/fejesp/paginas/epej.webp' },
+        { name: { pt: 'Prêmio FEJESP', en: 'FEJESP Award' }, screen: '/portfolio/fejesp/telas/premio.webp', full: '/portfolio/fejesp/paginas/premio.webp' },
       ],
     },
   },
