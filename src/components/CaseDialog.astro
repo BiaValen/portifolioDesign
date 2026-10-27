@@ -303,7 +303,7 @@ const game = p.game;
     {gallery.map((g) => (
       <section class="block" aria-label={g.title}>
         <h3 class="block-title">{g.title}</h3>
-        <div class:list={['id-grid', g.images.length > 1 && 'is-art']}>
+        <div class:list={['id-grid', g.images.length > 1 ? 'is-art' : 'is-single']}>
           {g.images.map((src) => (
             <img src={src} alt="" loading="lazy" decoding="async" />
           ))}
@@ -782,6 +782,10 @@ const game = p.game;
 
   .id-grid.is-many {
     grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  }
+
+  .id-grid.is-single {
+    max-width: 480px;
   }
 
   .id-grid.is-art {

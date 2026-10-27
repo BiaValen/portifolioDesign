@@ -304,7 +304,7 @@ export const projects: Project[] = [
           '/portfolio/scitec/itens/camiseta-mockup-2.webp',
           '/portfolio/scitec/itens/camiseta-mockup-3.webp',
           ...[1, 2, 3, 4].map((n) => `/portfolio/scitec/itens/camiseta-01-${n}.webp`),
-          ...[1, 2, 3, 4, 5, 6, 7].map((n) => `/portfolio/scitec/itens/camiseta-02-${n}.webp`),
+          ...[1, 2, 3, 4, 5].map((n) => `/portfolio/scitec/itens/camiseta-02-${n}.webp`),
         ],
       },
       { title: { pt: 'Boné', en: 'Cap' }, images: ['/portfolio/scitec/itens/bone-1.webp', '/portfolio/scitec/itens/bone-2.webp'] },
