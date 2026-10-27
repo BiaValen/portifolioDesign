@@ -354,6 +354,7 @@ const game = p.game;
     justify-content: space-between;
     align-items: flex-start;
     gap: 24px;
+    padding-right: 64px;
   }
 
   .case-intro {
@@ -393,9 +394,13 @@ const game = p.game;
     font-size: 0.95rem;
   }
 
+  /* Fica preso no canto enquanto o case rola, para fechar sem voltar ao topo. */
   .case-close {
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: clamp(16px, 3vw, 32px);
+    right: var(--gutter);
+    z-index: 5;
+    box-shadow: 0 6px 20px -8px rgb(0 0 0 / 0.5);
     display: grid;
     place-items: center;
     flex: none;
